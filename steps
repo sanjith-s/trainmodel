@@ -1,5 +1,5 @@
-1. python -m venv ./venv
-2. cmd.exe
+1.  python -m venv ./venv
+2.  cmd.exe
 
         C:\> <venv>\Scripts\activate.bat
 
@@ -7,11 +7,11 @@
 
         PS C:\> venv\Scripts\Activate.ps1
 
-3. pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-4. git clone https://github.com/huggingface/transformers
-5. cd transformers
-6. pip install .
-7. cd ..
-8. pip install -r requirements.txt
-9. Download dataset from https://drive.google.com/file/d/1tVLCpGN8cv2MfLn5HRCk5xNS7VNAX1qF/view?usp=sharing
-7. python run_mlm.py --output_dir="./save" --dataset_name="custom" --model_type="reformer" --data_path_custom="./data/dataset-small.pkl"  --do_train=True
+3.  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+4.  git clone https://github.com/huggingface/transformers
+5.  cd transformers
+6.  pip install .
+7.  cd ..
+8.  pip install -r requirements.txt
+9.  Download dataset from https://drive.google.com/file/d/1tVLCpGN8cv2MfLn5HRCk5xNS7VNAX1qF/view?usp=sharing
+10. python run_mlm.py --output_dir="./save" --dataset_name="custom" --model_type="reformer" --data_path_custom="./data/tamil-full.pkl" --do_train=True
