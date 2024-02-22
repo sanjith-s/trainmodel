@@ -13,5 +13,5 @@
 6.  pip install .
 7.  cd ..
 8.  pip install -r requirements.txt
-9.  Download dataset from https://drive.google.com/file/d/1tVLCpGN8cv2MfLn5HRCk5xNS7VNAX1qF/view?usp=sharing
+9.  Download dataset from https://drive.google.com/file/d/1tVLCpGN8cv2MfLn5HRCk5xNS7VNAX1qF/view?usp=sharing and store it in 'data' folder
 10. python run_mlm.py --output_dir="./save" --dataset_name="custom" --model_type="reformer" --data_path_custom="./data/tamil-full.pkl" --do_train=True

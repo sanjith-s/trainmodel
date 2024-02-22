@@ -177,7 +177,7 @@ pyrightconfig.json
 
 
 # Model training
-data/
+data/*
 save/
 transformers/
 
