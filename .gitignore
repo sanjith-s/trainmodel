@@ -177,8 +177,12 @@ pyrightconfig.json
 
 
 # Model training
-data/*
 save/
 transformers/
+
+
+# exclude everything
+data/*
+!data/.gitkeep 
 
 # End of https://www.toptal.com/developers/gitignore/api/python
