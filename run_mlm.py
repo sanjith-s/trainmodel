@@ -14,6 +14,8 @@ import warnings
 from dataclasses import dataclass, field
 from itertools import chain
 from typing import Optional
+from sklearn.model_selection import train_test_split
+
 
 import datasets
 import evaluate
@@ -37,6 +39,8 @@ from transformers.trainer_utils import get_last_checkpoint
 from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
 from tamilcharactertokenizer import TamilCharacterTokenizer
+from datasets import Dataset
+
 
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
@@ -316,7 +320,10 @@ def main():
             with open(data_args.data_path_custom, "rb") as f:
                 import pickle
                 lst = pickle.load(f)
-                raw_datasets = datasets.DatasetDict({"train":lst['train'], "validation": datasets.concatenate_datasets(dsets=[lst['test'], lst['validation']])})
+                train_dataset_dum, vali_dataset_dum= train_test_split(lst, test_size=0.3)
+                train_dataset_dum = Dataset.from_list([{"text": elem} for elem in train_dataset_dum])
+                vali_dataset_dum = Dataset.from_list([{"text": elem} for elem in vali_dataset_dum])
+                raw_datasets = datasets.DatasetDict({"train":train_dataset_dum, "validation": vali_dataset_dum})
         else:
             logger.error("--train not found. Specify train directory")
             raise(FileNotFoundError)

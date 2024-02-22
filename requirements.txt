@@ -2,3 +2,4 @@ datasets
 open-tamil
 accelerate
 evaluate
+scikit-learn
